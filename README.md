@@ -13,7 +13,7 @@ This project implements a **Text-to-Speech (TTS) system using Transformer archit
 ## **Installation** ⚙️  
 Clone the repository and install dependencies:  
 ```bash
-git clone https://github.com/your-username/text-to-speech.git
+git clone https://github.com/tonmoy197/text-to-speech.git
 cd text-to-speech
 pip install -r requirements.txt
 ```
