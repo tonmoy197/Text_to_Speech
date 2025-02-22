@@ -1,46 +1,50 @@
-# **TTS - Text-to-Speech System** 🎙️🔊  
+# **Text-to-Speech from Scratch** 🎙️🔊  
 
 ## **Overview**  
-TTS (Text-to-Speech) is an open-source project that converts written text into natural-sounding speech using advanced machine learning models. This repository provides a robust and customizable solution for speech synthesis, making it useful for applications such as assistive technology, voice assistants, audiobooks, and more.
+This project implements a **Text-to-Speech (TTS) system using Transformer architecture**. The model converts textual input into speech, leveraging deep learning techniques for high-quality voice synthesis.
 
 ## **Features** 🚀  
-✔ **High-Quality Speech Output** – Generates natural-sounding speech with deep learning models.  
-✔ **Multi-Language Support** – Supports multiple languages and accents.  
-✔ **Custom Voice Cloning** – Train and fine-tune models to mimic specific voices.  
-✔ **SSML Support** – Utilize Speech Synthesis Markup Language (SSML) for better control over speech output.  
-✔ **Real-Time Synthesis** – Generate speech instantly with minimal latency.  
-✔ **Open-Source & Customizable** – Modify and extend features based on your needs.  
+✔ **Uses Transformer-based architecture** for speech synthesis.  
+✔ **Processes text into phonemes** with custom preprocessing.  
+✔ **Generates mel spectrograms** from input text.  
+✔ **Supports dynamic sequence masking** for handling variable-length inputs.  
+✔ **Configurable Hyperparameters** for training and inference.
 
 ## **Installation** ⚙️  
 Clone the repository and install dependencies:  
 ```bash
-git clone https://github.com/your-username/TTS.git
-cd TTS
+git clone https://github.com/your-username/text-to-speech.git
+cd text-to-speech
 pip install -r requirements.txt
 ```
 
 ## **Usage** 🛠️  
-Convert text to speech using a simple command:  
-```python
-from tts import TTS
-
-tts = TTS(model="default")  # Load pre-trained model
-tts.speak("Hello, welcome to our Text-to-Speech system!")
+Run the Jupyter Notebook for model training and inference:  
+```bash
+jupyter notebook text-to-speech-from-scratch.ipynb
 ```
 
-You can also save the output as an audio file:  
-```python
-tts.save("Hello, this is an example.", "output.wav")
-```
+## **Key Components** 📌  
+### **1. Hyperparameter Configuration**  
+- Defines model settings, input/output parameters, and training configurations.  
+- Includes paths for dataset loading and preprocessing.  
 
-## **Supported Models** 🧠  
-- Tacotron 2  
-- FastSpeech 2  
-- VITS (Variational Inference Text-to-Speech)  
-- WaveGlow / HiFi-GAN for high-quality audio synthesis  
+### **2. Mask from Sequence Lengths Function**  
+- Creates a mask tensor for handling variable-length sequences.  
+- Ensures proper attention mechanism behavior.  
 
-## **Examples** 🎧  
-Check out sample audio outputs in the [examples](./examples) directory.
+### **3. Text Preprocessing & Phoneme Mapping**  
+- Converts text input into a numerical representation.  
+- Maps phonemes to tokenized embeddings.  
+
+### **4. Model Training and Inference**  
+- Uses a Transformer-based architecture to learn text-to-speech mapping.  
+- Generates mel spectrograms from textual input.  
+
+## **Dataset Requirements** 📊  
+The model requires a dataset containing **text-audio pairs** for training. Example datasets:  
+- **LJSpeech**: High-quality single-speaker speech dataset.  
+- **LibriTTS**: Large multi-speaker dataset.  
 
 ## **Contributing** 🤝  
 We welcome contributions! If you want to improve this project, feel free to:  
